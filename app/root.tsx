@@ -9,10 +9,10 @@ import {
 import { Link } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { CiShoppingCart } from "react-icons/ci";
-import image from "./welcome/image/Fk1.avif"
-import image1 from "./welcome/image/Fk2.jpg"
-import image2 from "./welcome/image/Fk3.avif"
-import image3 from "./welcome/image/Foodking3.svg"
+import image from "./welcome/image/Fk1.avif";
+import image1 from "./welcome/image/Fk2.jpg";
+import image2 from "./welcome/image/Fk3.avif";
+import image3 from "./welcome/image/Foodking3.svg";
 import { PiListDashesLight } from "react-icons/pi";
 import { FaTruck } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
@@ -49,225 +49,449 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <div>
-          <nav style={{backgroundColor:"white",color:"black", display:"flex", textAlign:"center",height:32, justifyContent:"space-between",padding:"10px 15px",}}>
-            <ul style={{listStyle:"none",display:"flex",margin:"0",gap:"15px",}}> 
-              <li style={{marginLeft:"125px"}}>100% Secure delivery without contact the courier</li>
-              <FaTruck style={{marginLeft:"25px"}}/>
-              <li>Track your order</li>
-              {<div style={{width:"1px", height:"23px",background:"black", marginLeft:"800px"}}></div> }
-                <IoIosSearch style={{marginLeft:"3px",marginTop:"2px"}}/>
-                <li style={{marginBottom:"15px"}}>search</li>
-               
-              </ul>
-              
-               <div style={{display:"flex", marginRight:"155px",gap:"5px"}}>
-               <PiFacebookLogoLight/>
-               <CiTwitter />
-              <SiVeed/>
-              <FaPinterestP />
-              </div> 
-          </nav>
-        <nav>
-<article  style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "10px 20px",
-      backgroundColor: "#f8f8f8",
-      borderBottom: "1px solid #ccc",
-    }}>
-  <div style={{marginTop:"15px"}}>
-    <img src={image3} alt="" />
-  
-  </div>
-  
-  <div style={{display:"flex",justifyContent:"center",gap:"15px"}}> 
-    <ul>
-    <li className="dropdown"><a href="" style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "black" }}>
-      <Link to="/">HOME</Link>
-      <RiArrowDropDownLine size={22}/>
-    </a>
-     <ul  className="fathia">  
-      <span style={{display:"grid", gridTemplateColumns:"repeat(3,1fr)",gap:"10px,", padding:"5px",borderRadius:"5px",backgroundColor:"blue", border:"1px"}} 
-       >
-    <li><img src={image} alt="" /></li>
-    <li><img src={image1}alt="" /></li>
-    <li><img src={image2} alt="" /></li>
-    </span>
-   </ul>
-    </li>
-    </ul>
-    <ul>
-   
-      <div className="riri" style={{ position: "relative" }}>
-  <Link to="/shop" style={{ textDecoration: "none", color: "black", alignItems:"center",display:"flex",gap:"3px" }}>MENU
-  <RiArrowDropDownLine  size={22}/>
-  </Link>
-
-  <ul className="lol">
-    <li>SHOP GRID<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP LIST<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP LEFT SIDE-BAR<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP RIGHT SIDE-BAR<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP SINGLE<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP CART<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>CHECKOUT<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-  </ul>
-</div>
-
-       
-      </ul>
-    
-<ul style={{ listStyleType: "none", padding: 0, margin: 0, position: "relative" }}>
-  <li  style={{ position: "relative" }} className="blog-parent">
-      <a href=""     style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            textDecoration: "none",
-            color: "black",
-          }}>RESERVATION
-      <RiArrowDropDownLine size={22} />
-      </a>
-      <ul className="blog-dropdown"
->
-      
-        <li>BLOG DETAILS
-<div style={{width:"100%",height:"1px",background:"grey",marginTop:"5px"}}></div>
-</li>
-        <li>BLOG
-        <div style={{width:"100%",height:"1px",background:"grey"}}></div> 
-        </li>
-
-      </ul>
-      </li>
-      </ul>
-      
-
-      <ul style={{listStyleType: "none", padding: 0, margin: 0, position: "relative",top:"-8px" }}>
-        <li className="menu-parent" style={{ position: "relative",  }}>
-          <a
-            href="#"
+          {/* <nav
             style={{
+              backgroundColor: "white",
+              color: "black",
               display: "flex",
-              alignItems: "center",
-              gap: "5px",
-              padding: "10px",
+              textAlign: "center",
+              height: 32,
+              justifyContent: "space-between",
+              padding: "10px 15px",
             }}
           >
-            ABOUT <RiArrowDropDownLine />
-          </a>
+            <ul
+              style={{
+                listStyle: "none",
+                display: "flex",
+                margin: "0",
+                gap: "15px",
+              }}
+            >
+              <li style={{ marginLeft: "125px" }}>
+                100% Secure delivery without contact the courier
+              </li>
+              <FaTruck style={{ marginLeft: "25px" }} />
+              <li>Track your order</li>
+              {
+                <div
+                  style={{
+                    width: "1px",
+                    height: "23px",
+                    background: "black",
+                    marginLeft: "800px",
+                  }}
+                ></div>
+              }
+              <IoIosSearch style={{ marginLeft: "3px", marginTop: "2px" }} />
+              <li style={{ marginBottom: "15px" }}>search</li>
+            </ul>
 
-          <ul className="menu-list">
-            <li><a href="#">ABOUT US</a></li>
+            <div style={{ display: "flex", marginRight: "155px", gap: "5px" }}>
+              <PiFacebookLogoLight />
+              <CiTwitter />
+              <SiVeed />
+              <FaPinterestP />
+            </div>
+          </nav> */}
+          <nav>
+            <article
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "10px 20px",
+                backgroundColor: "#f8f8f8",
+                borderBottom: "1px solid #ccc",
+              }}
+            >
+              <div style={{ marginTop: "15px" }}>
+                <img src={image3} alt="" />
+              </div>
 
-            <li className="submenu-parent">
-              <a href="#">
-                CHEF PAGE <RiArrowDropDownLine />
-              </a>
-              <ul className="submenu-list">
-                <li><a href="#">CHEF PAGE</a></li>
-                <li><a href="#">CHEF DETAILS</a></li>
-              </ul>
-            </li>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "15px",
+                }}
+              >
+                <ul>
+                  <li className="dropdown">
+                    <Link
+                      to={"/"}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                    >
+                      HOME
+                      <RiArrowDropDownLine size={22} />
+                    </Link>
+                    <ul className="fathia">
+                      <span
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns: "repeat(3,1fr)",
+                          gap: "10px,",
+                          padding: "5px",
+                          borderRadius: "5px",
+                          backgroundColor: "blue",
+                          border: "1px",
+                        }}
+                      >
+                        <li>
+                          <img src={image} alt="" />
+                        </li>
+                        <li>
+                          <img src={image1} alt="" />
+                        </li>
+                        <li>
+                          <img src={image2} alt="" />
+                        </li>
+                      </span>
+                    </ul>
+                  </li>
+                </ul>
+                <ul>
+                  <div className="riri" style={{ position: "relative" }}>
+                    <Link
+                      to="/shop"
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        alignItems: "center",
+                        display: "flex",
+                        gap: "3px",
+                      }}
+                    >
+                      MENU
+                      <RiArrowDropDownLine size={22} />
+                    </Link>
 
-            <li className="submenu-parent">
-              <a href="#">
-                FOOD MENU <RiArrowDropDownLine />
-              </a>
-              <ul className="submenu-list">
-                <li><a href="#">FOOD MENU 1</a></li>
-                <li><a href="#">FOOD MENU 2</a></li>
-              </ul>
-            </li>
+                    <ul className="lol">
+                      <li>
+                        SHOP GRID
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        SHOP LIST
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        SHOP LEFT SIDE-BAR
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        SHOP RIGHT SIDE-BAR
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        SHOP SINGLE
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        SHOP CART
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        CHECKOUT
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                    </ul>
+                  </div>
+                </ul>
 
-            <li><a href="#">GALLERY</a></li>
-            <li><a href="#">TESTIMONIAL</a></li>
-            <li><a href="#">RESERVATION</a></li>
-            <li><a href="#">FAQ'S</a></li>
-            <li><a href="#">404 PAGE</a></li>
-          </ul>
-        </li>
-      </ul>
+                <ul
+                  style={{
+                    listStyleType: "none",
+                    padding: 0,
+                    margin: 0,
+                    position: "relative",
+                  }}
+                >
+                  <li style={{ position: "relative" }} className="blog-parent">
+                    <a
+                      href=""
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                    >
+                      RESERVATION
+                      <RiArrowDropDownLine size={22} />
+                    </a>
+                    <ul className="blog-dropdown">
+                      <li>
+                        BLOG DETAILS
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                            marginTop: "5px",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        BLOG
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
 
-    
-      <ul style={{ listStyleType: "none", padding: 0, margin: 0, position: "relative" }}>
-  <li  style={{ position: "relative" }} className="blog-parent">
-      <a href=""     style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            textDecoration: "none",
-            color: "black",
-          }}>CONTACT
-      <RiArrowDropDownLine size={22} />
-      </a>
-      <ul className="blog-dropdown"
->
-      
-        <li>BLOG DETAILS
-<div style={{width:"100%",height:"1px",background:"grey",marginTop:"5px"}}></div>
-</li>
-        <li>BLOG
-        <div style={{width:"100%",height:"1px",background:"grey"}}></div> 
-        </li>
+                <ul
+                  style={{
+                    listStyleType: "none",
+                    padding: 0,
+                    margin: 0,
+                    position: "relative",
+                    top: "-8px",
+                  }}
+                >
+                  <li className="menu-parent" style={{ position: "relative" }}>
+                    <a
+                      href="#"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        padding: "10px",
+                      }}
+                    >
+                      ABOUT <RiArrowDropDownLine />
+                    </a>
 
-      </ul>
-      </li>
-      </ul>
+                    <ul className="menu-list">
+                      <li>
+                        <a href="#">ABOUT US</a>
+                      </li>
 
-          
-<ul style={{ listStyleType: "none", padding: 0, margin: 0, position: "relative" }}>
-  <li  style={{ position: "relative" }} className="blog-parent">
-      <a href=""     style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            textDecoration: "none",
-            color: "black",
-          }}>CART
-      <RiArrowDropDownLine size={22} />
-      </a>
-      <ul className="blog-dropdown"
->
-      
-        <li>BLOG DETAILS
-<div style={{width:"100%",height:"1px",background:"grey",marginTop:"5px"}}></div>
-</li>
-        <li>BLOG
-        <div style={{width:"100%",height:"1px",background:"grey"}}></div> 
-        </li>
+                      <li className="submenu-parent">
+                        <a href="#">
+                          CHEF PAGE <RiArrowDropDownLine />
+                        </a>
+                        <ul className="submenu-list">
+                          <li>
+                            <a href="#">CHEF PAGE</a>
+                          </li>
+                          <li>
+                            <a href="#">CHEF DETAILS</a>
+                          </li>
+                        </ul>
+                      </li>
 
-      </ul>
-      </li>
-      </ul>
+                      <li className="submenu-parent">
+                        <a href="#">
+                          FOOD MENU <RiArrowDropDownLine />
+                        </a>
+                        <ul className="submenu-list">
+                          <li>
+                            <a href="#">FOOD MENU 1</a>
+                          </li>
+                          <li>
+                            <a href="#">FOOD MENU 2</a>
+                          </li>
+                        </ul>
+                      </li>
 
-  
-    
-  </div>
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-      }}>
-        <span style={{ fontSize: "16px" }}><CiShoppingCart /></span>
-        <button style={{
-          padding: "6px 12px",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-        }}>
-          CONTACT US
-        </button>
-        <PiListDashesLight size={24} style={{ cursor: "pointer" }} />
-      </div>
-    
+                      <li>
+                        <a href="#">GALLERY</a>
+                      </li>
+                      <li>
+                        <a href="#">TESTIMONIAL</a>
+                      </li>
+                      <li>
+                        <a href="#">RESERVATION</a>
+                      </li>
+                      <li>
+                        <a href="#">FAQ'S</a>
+                      </li>
+                      <li>
+                        <a href="#">404 PAGE</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
 
-</article>
-</nav>
-          <Outlet/>
+                <ul
+                  style={{
+                    listStyleType: "none",
+                    padding: 0,
+                    margin: 0,
+                    position: "relative",
+                  }}
+                >
+                  <li style={{ position: "relative" }} className="blog-parent">
+                    <a
+                      href=""
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                    >
+                      CONTACT
+                      <RiArrowDropDownLine size={22} />
+                    </a>
+                    <ul className="blog-dropdown">
+                      <li>
+                        BLOG DETAILS
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                            marginTop: "5px",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        BLOG
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <ul
+                  style={{
+                    listStyleType: "none",
+                    padding: 0,
+                    margin: 0,
+                    position: "relative",
+                  }}
+                >
+                  <li style={{ position: "relative" }} className="blog-parent">
+                    <a
+                      href=""
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                    >
+                      CART
+                      <RiArrowDropDownLine size={22} />
+                    </a>
+                    <ul className="blog-dropdown">
+                      <li>
+                        BLOG DETAILS
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                            marginTop: "5px",
+                          }}
+                        ></div>
+                      </li>
+                      <li>
+                        BLOG
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "1px",
+                            background: "grey",
+                          }}
+                        ></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <span style={{ fontSize: "16px" }}>
+                  <CiShoppingCart />
+                </span>
+                <button
+                  style={{
+                    padding: "6px 12px",
+                    backgroundColor: "#007bff",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                  }}
+                >
+                  CONTACT US
+                </button>
+                <PiListDashesLight size={24} style={{ cursor: "pointer" }} />
+              </div>
+            </article>
+          </nav>
+          <Outlet />
         </div>
         {/* {children} */}
         <ScrollRestoration />
