@@ -1,89 +1,336 @@
+import { link } from "fs";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
+import { FaTruck } from "react-icons/fa";
+import { IoIosSearch } from "react-icons/io";
+import { PiFacebookLogoLight } from "react-icons/pi";
+import { CiTwitter } from "react-icons/ci";
+import { SiVeed } from "react-icons/si";
+import { FaPinterestP } from "react-icons/fa6";
+import { BsDisplay } from "react-icons/bs";
+import image from "./image/Fk1.avif"
+import image1 from "./image/Fk2.jpg"
+import image2 from "./image/Fk3.avif"
+import image3 from "./image/Foodking3.svg"
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { CiShoppingCart } from "react-icons/ci";
+import image4 from "./image/grilledchicken1.png"
+import image5 from "./image/grilledchicken2.png"
+import { PiListDashesLight } from "react-icons/pi";
+import image6 from "./image/Foodkingss.jpg"
+import chicken from "./image/chiken.png";
+
+import shop from "./image/Shopimage.jpg"
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // core styles
+import 'swiper/css/navigation'; // optional modules
+import { Navigation } from 'swiper/modules';
+
+import { BsCurrencyDollar } from "react-icons/bs";
+import fooditems from "../welcome/fooditem"
+import Amala from "../welcome/image/Amala.jpg"
+import Egusi from "../welcome/image/Egusi.jpg"
+import Plaintain from "../welcome/image/Plantain.jpg"
+import Pap from "../welcome/image/Pap and Akara.jpg"
+import spaghetti from "../welcome/image/Spaghetti.jpg"
+import jollof from "../welcome/image/Jollof.jpg"
+
+
+
 
 export function Welcome() {
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
-      <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
-            <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <div className="max-w-[300px] w-full space-y-6 px-4">
-          <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
-            </p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+
+    <section style={{background:"white", height:"500%",width:"100%"}}> 
+{/* <nav style={{backgroundColor:"white",color:"black", display:"flex", textAlign:"center",height:32, justifyContent:"space-between",padding:"10px 15px",}}>
+  <ul style={{listStyle:"none",display:"flex",margin:"0",gap:"15px",}}> 
+    <li style={{marginLeft:"125px"}}>100% Secure delivery without contact the courier</li>
+    <FaTruck style={{marginLeft:"25px"}}/>
+    <li>Track your order</li>
+    {<div style={{width:"1px", height:"23px",background:"black", marginLeft:"800px"}}></div> }
+      <IoIosSearch style={{marginLeft:"3px",marginTop:"2px"}}/>
+      <li style={{marginBottom:"15px"}}>search</li>
+     
+    </ul>
+    
+     <div style={{display:"flex", marginRight:"155px",gap:"5px"}}>
+     <PiFacebookLogoLight/>
+     <CiTwitter />
+    <SiVeed/>
+    <FaPinterestP />
+    </div> 
+</nav>  */}
+<div style={{width:"100%",height:"1px",background:"black"}}></div>
+  {/* <nav>
+<article  style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "10px 20px",
+      backgroundColor: "#f8f8f8",
+      borderBottom: "1px solid #ccc",
+    }}>
+  <div style={{marginTop:"15px"}}>
+    <img src={image3} alt="" />
+  
+  </div>
+  
+  <div style={{display:"flex",justifyContent:"center",gap:"15px"}}> 
+    <ul>
+    <li className="dropdown"><a href="" style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "black" }}>
+      <span>HOME</span>
+      <RiArrowDropDownLine size={22}/>
+    </a>
+     <ul  className="fathia">  
+      <span style={{display:"grid", gridTemplateColumns:"repeat(3,1fr)",gap:"10px,", padding:"5px",borderRadius:"5px",backgroundColor:"blue", border:"1px"}} 
+       >
+    <li><img src={image} alt="" /></li>
+    <li><img src={image1}alt="" /></li>
+    <li><img src={image2} alt="" /></li>
+    </span>
+   </ul>
+    </li>
+    </ul>
+    <ul>
+   
+      <div className="riri" style={{ position: "relative" }}>
+  <a href="#" style={{ textDecoration: "none", color: "black", alignItems:"center",display:"flex",gap:"3px" }}>SHOP
+  <RiArrowDropDownLine  size={22}/>
+  </a>
+
+  <ul className="lol">
+    <li>SHOP GRID<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+    <li>SHOP LIST<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+    <li>SHOP LEFT SIDE-BAR<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+    <li>SHOP RIGHT SIDE-BAR<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+    <li>SHOP SINGLE<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+    <li>SHOP CART<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+    <li>CHECKOUT<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
+  </ul>
+</div>
+
+       
+      </ul>
+    
+<ul style={{ listStyleType: "none", padding: 0, margin: 0, position: "relative" }}>
+  <li  style={{ position: "relative" }} className="blog-parent">
+      <a href=""     style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+            textDecoration: "none",
+            color: "black",
+          }}>BLOG 
+      <RiArrowDropDownLine size={22} />
+      </a>
+      <ul className="blog-dropdown"
+>
+      
+        <li>BLOG DETAILS
+<div style={{width:"100%",height:"1px",background:"grey",marginTop:"5px"}}></div>
+</li>
+        <li>BLOG
+        <div style={{width:"100%",height:"1px",background:"grey"}}></div> 
+        </li>
+
+      </ul>
+      </li>
+      </ul>
+      
+
+      <ul style={{listStyleType: "none", padding: 0, margin: 0, position: "relative",top:"-8px" }}>
+        <li className="menu-parent" style={{ position: "relative",  }}>
+          <a
+            href="#"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+              padding: "10px",
+            }}
+          >
+            PAGES <RiArrowDropDownLine />
+          </a>
+
+          <ul className="menu-list">
+            <li><a href="#">ABOUT US</a></li>
+
+            <li className="submenu-parent">
+              <a href="#">
+                CHEF PAGE <RiArrowDropDownLine />
+              </a>
+              <ul className="submenu-list">
+                <li><a href="#">CHEF PAGE</a></li>
+                <li><a href="#">CHEF DETAILS</a></li>
+              </ul>
+            </li>
+
+            <li className="submenu-parent">
+              <a href="#">
+                FOOD MENU <RiArrowDropDownLine />
+              </a>
+              <ul className="submenu-list">
+                <li><a href="#">FOOD MENU 1</a></li>
+                <li><a href="#">FOOD MENU 2</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">TESTIMONIAL</a></li>
+            <li><a href="#">RESERVATION</a></li>
+            <li><a href="#">FAQ'S</a></li>
+            <li><a href="#">404 PAGE</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+    <ul>
+  <li>CONTACT</li>
+  </ul>
+    
+  </div>
+      <div style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "10px",
+      }}>
+        <span style={{ fontSize: "16px" }}><CiShoppingCart /></span>
+        <button style={{
+          padding: "6px 12px",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          borderRadius: "4px",
+          cursor: "pointer",
+        }}>
+          CONTACT US
+        </button>
+        <PiListDashesLight size={24} style={{ cursor: "pointer" }} />
+      </div>
+    
+
+</article>
+</nav>   */}
+<nav>
+<div></div>
+  
+</nav>
+
+ <main style={{ position: "relative" }}>
+      <div style={{ position: "relative" }}>
+        <img
+          style={{ width: "100%", height: "655px", objectFit: "cover" }}
+          src={image6}
+          alt="background"
+        />
+
+        <div
+          style={{
+            position: "absolute",
+            top: "20%",
+            left: "10%",
+            color: "#fff",
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px",
+            alignItems: "flex-start",
+            zIndex: 2,
+          }}
+        >
+          <img
+            src={chicken}
+            alt="chicken"
+            style={{ width: "120px", height: "auto" }}
+          />
+
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <li style={{ fontSize: "54px", fontWeight: "bold" }}>
+              CRISPY, EVERY BITE TASTE
+            </li>
+            <li style={{ fontSize: "40px", fontWeight: "500" }}>
+              DELICIOUS FRIED CHICKEN
+            </li>
+          </ul>
+
+          <button className="button-order"
+            style={{
+          
+            }}
+          >
+            <FaTruck />
+            <a
+              href="#"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              ORDER NOW
+            </a>
+          </button>
         </div>
       </div>
-    </main>
-  );
+    </main> 
+  
+
+    <Swiper
+  slidesPerView="auto"
+  spaceBetween={20}
+  style={{
+    padding: '20px',
+    backgroundColor: '#fafafa',
+    borderTop: '1px solid #e5e7eb',
+    borderBottom: '1px solid #e5e7eb',
+  }}
+>
+  {fooditems.map((item) => (
+    <SwiperSlide key={item.id} style={{ width: '240px' }}>
+      <div
+        style={{
+          height: '320px',
+          backgroundColor: 'white',
+          borderRadius: '10px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+          padding: '16px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
+        <img
+          src={item.img}
+          alt={item.name}
+          style={{
+            width: '100%',
+            height: '160px',
+            objectFit: 'cover',
+            borderRadius: '8px',
+          }}
+        />
+        <div>
+          <h3 style={{ fontSize: '17px', fontWeight: '600' }}>{item.name}</h3>
+          <p style={{ fontSize: '13px', color: '#6b7280' }}>{item.desc}</p>
+          <p style={{ marginTop: '6px', fontWeight: '600', color: '#b91c1c' }}>
+            <BsCurrencyDollar style={{ marginRight: '4px' }} />
+            {item.price}
+          </p>
+        </div>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper> 
+
+
+
+
+
+
+ </section> 
+
+
+);
 }
 
-const resources = [
-  {
-    href: "https://reactrouter.com/docs",
-    text: "React Router Docs",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 24 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-  },
-];
+
+
+
