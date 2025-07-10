@@ -49,4 +49,6 @@ const fooditems = [
   },
 ];
 
+
 export default fooditems;
+

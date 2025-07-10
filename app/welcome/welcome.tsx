@@ -18,16 +18,13 @@ import image5 from "./image/grilledchicken2.png";
 import { PiListDashesLight } from "react-icons/pi";
 import image6 from "./image/Foodkingss.jpg";
 import chicken from "./image/chiken.png";
-
 import shop from "./image/Shopimage.jpg";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../app.css";
-
 import { BsCurrencyDollar } from "react-icons/bs";
 import fooditems from "../welcome/fooditem";
 import Amala from "../welcome/image/Amala.jpg";
@@ -36,283 +33,96 @@ import Plaintain from "../welcome/image/Plantain.jpg";
 import Pap from "../welcome/image/Pap and Akara.jpg";
 import spaghetti from "../welcome/image/Spaghetti.jpg";
 import jollof from "../welcome/image/Jollof.jpg";
+import backg from "../welcome/image/backg.jpg";
+import product from "../routes/Product";
+import { useNavigate } from 'react-router-dom';
+import fried from "../welcome/image/friedchicken.png"
+import os1 from "../welcome/image/os1.jpg";
+import burger from "../welcome/image/Burgerr.png";
+import app1 from "../welcome/image/Appetizer.png"
+import app2 from "../welcome/image/Appetizer2.png"
+import app3 from "../welcome/image/Appetizer3.png"
+import chef from "../welcome/image/cheff.png"
 
 export function Welcome() {
+   const navigate = useNavigate();
+  const handleorder:(e:React.MouseEvent<HTMLButtonElement>)=>void=(e)=>{
+    e.preventDefault()
+    navigate("/product")
+  }
+  const cartorder:(e:React.MouseEvent<HTMLButtonElement>)=>void=(e)=>{
+    e.preventDefault()
+    navigate("/cart")
+  }
+
+
+  
+// FoodGrid.jsx
+const foodItems = [
+  {
+    id: 1,
+    name: "Spaghetti",
+    price: "₦1500",
+    description: "Pasta in rich tomato sauce with spices and meat.",
+    image: spaghetti,
+  },
+  {
+    id: 2,
+    name: "Jollof",
+    price: "₦1200",
+    description: "Spicy tomato rice served with chicken or plantains.",
+    image: jollof,
+  },
+  {
+    id: 3,
+    name: "Salad",
+    price: "₦2500",
+    description:"A refreshing bowl of garden-fresh goodness.",
+    image: app3,
+  },
+  {
+    id: 4,
+    name: "Egusi",
+    price: "₦1800",
+    description: "Melon seed soup with leafy greens and meat.",
+    image: Egusi,
+  },
+];
+
+
   return (
-    <section style={{ background: "white", height: "500%", width: "100%" }}>
-      {/* <nav
-        style={{
-          backgroundColor: "white",
-          color: "black",
-          display: "flex",
-          textAlign: "center",
-          height: 32,
-          justifyContent: "space-between",
-          padding: "10px 15px",
-        }}
-      >
-        <ul
-          style={{
-            listStyle: "none",
-            display: "flex",
-            margin: "0",
-            gap: "15px",
-          }}
-        >
-          <li style={{ marginLeft: "125px" }}>
-            100% Secure delivery without contact the courier
-          </li>
-          <FaTruck style={{ marginLeft: "25px" }} />
-          <li>Track your order</li>
-          {
-            <div
-              style={{
-                width: "1px",
-                height: "23px",
-                background: "black",
-                marginLeft: "800px",
-              }}
-            ></div>
-          }
-          <IoIosSearch style={{ marginLeft: "3px", marginTop: "2px" }} />
-          <li style={{ marginBottom: "15px" }}>search</li>
-        </ul>
-
-        <div style={{ display: "flex", marginRight: "155px", gap: "5px" }}>
-          <PiFacebookLogoLight />
-          <CiTwitter />
-          <SiVeed />
-          <FaPinterestP />
-        </div>
-      </nav> */}
-      <div style={{ width: "100%", height: "1px", background: "black" }}></div>
-      {/* <nav>
-<article  style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "10px 20px",
-      backgroundColor: "#f8f8f8",
-      borderBottom: "1px solid #ccc",
-    }}>
-  <div style={{marginTop:"15px"}}>
-    <img src={image3} alt="" />
-  
-  </div>
-  
-  <div style={{display:"flex",justifyContent:"center",gap:"15px"}}> 
-    <ul>
-    <li className="dropdown"><a href="" style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "black" }}>
-      <span>HOME</span>
-      <RiArrowDropDownLine size={22}/>
-    </a>
-     <ul  className="fathia">  
-      <span style={{display:"grid", gridTemplateColumns:"repeat(3,1fr)",gap:"10px,", padding:"5px",borderRadius:"5px",backgroundColor:"blue", border:"1px"}} 
-       >
-    <li><img src={image} alt="" /></li>
-    <li><img src={image1}alt="" /></li>
-    <li><img src={image2} alt="" /></li>
-    </span>
-   </ul>
-    </li>
-    </ul>
-    <ul>
-   
-      <div className="riri" style={{ position: "relative" }}>
-  <a href="#" style={{ textDecoration: "none", color: "black", alignItems:"center",display:"flex",gap:"3px" }}>SHOP
-  <RiArrowDropDownLine  size={22}/>
-  </a>
-
-  <ul className="lol">
-    <li>SHOP GRID<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP LIST<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP LEFT SIDE-BAR<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP RIGHT SIDE-BAR<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP SINGLE<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>SHOP CART<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-    <li>CHECKOUT<div style={{ width: "100%", height: "1px", background: "grey" }}></div></li>
-  </ul>
-</div>
-
-       
-      </ul>
-    
-<ul style={{ listStyleType: "none", padding: 0, margin: 0, position: "relative" }}>
-  <li  style={{ position: "relative" }} className="blog-parent">
-      <a href=""     style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            textDecoration: "none",
-            color: "black",
-          }}>BLOG 
-      <RiArrowDropDownLine size={22} />
-      </a>
-      <ul className="blog-dropdown"
+    <section    style={{
+      background:"white",
+      
+    }}
 >
-      
-        <li>BLOG DETAILS
-<div style={{width:"100%",height:"1px",background:"grey",marginTop:"5px"}}></div>
-</li>
-        <li>BLOG
-        <div style={{width:"100%",height:"1px",background:"grey"}}></div> 
-        </li>
+    
+      <div style={{ width: "100%", height: "1px", background: "black" }}></div>
 
-      </ul>
-      </li>
-      </ul>
-      
+     
 
-      <ul style={{listStyleType: "none", padding: 0, margin: 0, position: "relative",top:"-8px" }}>
-        <li className="menu-parent" style={{ position: "relative",  }}>
-          <a
-            href="#"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-              padding: "10px",
-            }}
-          >
-            PAGES <RiArrowDropDownLine />
-          </a>
+      <main className="hero-section">
+      <div className="hero-wrapper">
+        <img className="hero-bg" src={backg} alt="background" />
+        <div className="overlay"></div>
 
-          <ul className="menu-list">
-            <li><a href="#">ABOUT US</a></li>
-
-            <li className="submenu-parent">
-              <a href="#">
-                CHEF PAGE <RiArrowDropDownLine />
-              </a>
-              <ul className="submenu-list">
-                <li><a href="#">CHEF PAGE</a></li>
-                <li><a href="#">CHEF DETAILS</a></li>
-              </ul>
-            </li>
-
-            <li className="submenu-parent">
-              <a href="#">
-                FOOD MENU <RiArrowDropDownLine />
-              </a>
-              <ul className="submenu-list">
-                <li><a href="#">FOOD MENU 1</a></li>
-                <li><a href="#">FOOD MENU 2</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#">GALLERY</a></li>
-            <li><a href="#">TESTIMONIAL</a></li>
-            <li><a href="#">RESERVATION</a></li>
-            <li><a href="#">FAQ'S</a></li>
-            <li><a href="#">404 PAGE</a></li>
+        <div className="hero-content">
+          <ul className="hero-text">
+            <li className="line-one">CRISPY, EVERY BITE TASTE</li>
+            <li className="line-two">DELICIOUS FRIED CHICKEN</li>
+            {/* <img className="moving-image" src={fried} alt="fried" /> */}
           </ul>
-        </li>
-      </ul>
 
-
-
-    <ul>
-  <li>CONTACT</li>
-  </ul>
-    
-  </div>
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-      }}>
-        <span style={{ fontSize: "16px" }}><CiShoppingCart /></span>
-        <button style={{
-          padding: "6px 12px",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-        }}>
-          CONTACT US
-        </button>
-        <PiListDashesLight size={24} style={{ cursor: "pointer" }} />
-      </div>
-    
-
-</article>
-</nav>   */}
-      <nav>
-        <div></div>
-      </nav>
-
-      <main style={{ position: "relative" }}>
-        <div style={{ position: "relative" }}>
-          <img
-            style={{
-              width: "100%",
-              height: "655px",
-              objectFit: "cover",
-              display: "block", // Remove any potential inline-block spacing issues
-            }}
-            src={image6}
-            alt="background"
-          />
-
-          {/* Overlay for better text visibility */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              background: "rgba(0, 0, 0, 0.4)", // Dark transparent overlay for contrast
-            }}
-          ></div>
-
-          <div
-            style={{
-              position: "absolute",
-              top: "20%",
-              left: "10%",
-              color: "#fff",
-              display: "flex",
-              flexDirection: "column",
-              gap: "15px",
-              alignItems: "flex-start",
-              zIndex: 2,
-            }}
-          >
-            <img
-              src={chicken}
-              alt="chicken"
-              style={{
-                width: "120px",
-                height: "auto",
-                marginBottom: "20px", // Added a margin to separate the image from text
-              }}
-            />
-
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              <li style={{ fontSize: "3rem", fontWeight: "bold" }}>
-                CRISPY, EVERY BITE TASTE
-              </li>
-              <li style={{ fontSize: "1.5rem", fontWeight: "500" }}>
-                DELICIOUS FRIED CHICKEN
-              </li>
-            </ul>
-
-            <button
-              className="button-order"
-              style={{}}
-              aria-label="Order Fried Chicken Now"
-            >
-              <FaTruck />
-              <a href="#" style={{ color: "white", textDecoration: "none" }}>
-                ORDER NOW
-              </a>
-            </button>
-          </div>
+          <button onClick={handleorder} className="button-order">
+            <FaTruck />
+            <a href="#" className="order-link">ORDER NOW</a>
+          </button>
         </div>
-      </main>
+      </div>
+    </main>
 
+
+<nav style={{color:"black", fontSize:"28px",textAlign:"center", fontWeight:"bolder", paddingTop:"50px",paddingBottom:"25px"}}>POPULAR FOODITEMS
       <div className="swiper-container">
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
@@ -322,7 +132,7 @@ export function Welcome() {
             delay: 3000,
             disableOnInteraction: false,
           }}
-          pagination={{ clickable: true }} // Enable clickable pagination dots
+          pagination={{ clickable: true }} 
           loop={true}
           speed={500}
           style={{
@@ -345,9 +155,9 @@ export function Welcome() {
             <SwiperSlide
               key={item.id}
               style={{
-                width: "auto", // Allow the slide width to be dynamic based on content
-                maxWidth: "240px", // Set max-width for each slide
-                flex: "1 0 auto", // Make the slide grow as needed but limit its width
+                width: "auto", 
+                maxWidth: "1040px",
+                flex: "1 0 auto", 
               }}
             >
               <div
@@ -395,6 +205,220 @@ export function Welcome() {
           ))}
         </Swiper>
       </div>
+      </nav>
+      <main>
+  <div className="image-grid">
+    {[os1, os1, os1].map((src, index) => (
+      <div className="image-card" key={index}>
+        <img src={src} alt="background" className="card-bg" />
+        <div className="card-overlay"></div>
+        <ul className="card-content">
+          <img src={fried} alt="side item" className="side-img" />
+          <li className="desc-line1">
+            A grilled meat patty stacked in a bun with fresh toppings <br /> and savory sauces
+          </li>
+          <li className="desc-line2">
+            comfort food at its best.
+          </li>
+          <button onClick={handleorder} className="button-order" aria-label="Order Fried Chicken Now">
+            <FaTruck />
+            <a href="#" className="order-link">ORDER NOW</a>
+          </button>
+        </ul>
+      </div>
+    ))}
+  </div>
+
+</main>
+
+
+<div>
+<div className="marquee-wrapper">
+  <div className="marquee-track">
+    <span className="marquee-item">GRILLED</span>
+    <span className="marquee-item">CHICKEN</span>
+    <span className="marquee-item">SHAWARMA</span>
+    <span className="marquee-item">PIZZA</span>
+    <span className="marquee-item">BURGER</span>
+    <span className="marquee-item">FRESH FOOD</span>
+    <span className="marquee-item">SHAWARMA</span>
+
+  </div>
+</div>
+
+</div> 
+
+
+
+<div className="flex flex-col lg:flex-row w-full justify-center items-start">
+      {/* Main Nav */}
+      <nav
+        style={{
+          width: "60%",
+          background: "white",
+          border: "2px solid #000",
+          borderRadius: "20px",
+          padding: "10px",
+          boxSizing: "border-box",
+        }}
+      >
+        <div className="p-6">
+          <h3 style={{ color: "black", textAlign: "center", fontSize: "25px" }}>
+            OUR MENU
+          </h3>
+          <h2 className="text-2xl font-bold mb-4 text-black">Popular Picks</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {foodItems.map((item) => (
+              <div
+                key={item.id}
+                className="border rounded-2xl p-2 shadow hover:bg-blue-100 transition duration-300"
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-24 sm:h-28 md:h-32 lg:h-36 object-cover rounded-lg mb-3"
+                />
+                <h3 className="text-sm font-semibold">{item.name}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+                <p className="font-bold mt-2">{item.price}</p>
+                <button className="cart-order" onClick={cartorder}>
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Repeatable Sections */}
+        <div className="p-6">
+          <h2 className="text-2xl font-bold mb-4 text-black">Appetizers</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {foodItems.map((item) => (
+              <div
+                key={item.id}
+                className="border rounded-2xl p-2 shadow hover:bg-blue-100 transition duration-300"
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-24 sm:h-28 md:h-32 lg:h-36 object-cover rounded-lg mb-3"
+                />
+                <h3 className="text-sm font-semibold">{item.name}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+                <p className="font-bold mt-2">{item.price}</p>
+                <button className="cart-order" onClick={cartorder}>
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="p-6">
+          <h2 className="text-2xl font-bold mb-4 text-black">Salads</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {foodItems.map((item) => (
+              <div
+                key={item.id}
+                className="border rounded-2xl p-2 shadow hover:bg-blue-100 transition duration-300"
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-24 sm:h-28 md:h-32 lg:h-36 object-cover rounded-lg mb-3"
+                />
+                <h3 className="text-sm font-semibold">{item.name}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+                <p className="font-bold mt-2">{item.price}</p>
+                <button className="cart-order" onClick={cartorder}>
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Sidebar */}
+      <aside className="hidden lg:block w-[20%] ml-4 border border-gray-300 rounded-xl p-4 bg-gray-50">
+        <h3 className="text-lg font-bold mb-3 text-gray-700">POPULAR PICKS</h3>
+        <h5 className="text-black mb-3 text-sm">
+          Pick from some of our popular menu choices <br />
+          and find out what the buzz is all about!
+        </h5>
+        <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600">
+          <li>Jollof Rice</li>
+          <li>Shawarma</li>
+          <li>Amala & Ewedu</li>
+          <li>Meat Pie</li>
+          <li>Spaghetti Combo</li>
+        </ul>
+      </aside>
+    </div>
+
+
+    <section className="why-choose-us">
+  <div className="why-container">
+    <h2 className="why-title">Why Choose Us</h2>
+    <p className="why-subtitle">
+      Serving excellence in every dish — here’s what sets us apart
+    </p>
+
+    <div className="features">
+      <div className="feature-box">
+        <span className="icon">👨‍🍳</span>
+        <h3>Master Chefs</h3>
+        <p>
+          Our award-winning chefs craft dishes with passion, precision, and perfection.
+        </p>
+      </div>
+
+      <div className="feature-box">
+        <span className="icon">🍽️</span>
+        <h3>Gourmet Experience</h3>
+        <p>
+          We blend traditional recipes with modern culinary techniques to create unforgettable meals.
+        </p>
+      </div>
+
+      <div className="feature-box">
+        <span className="icon">🌿</span>
+        <h3>Fresh Ingredients</h3>
+        <p>
+          We source local and organic ingredients to ensure every bite is nutritious and flavorful.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section className="testimonial-page">
+  <div className="testimonial-container">
+    <h2 className="review-title">Our Customer Reviews</h2>
+
+    <img src={chef} alt="Chef" className="chef-img" />
+
+    <div className="customer-reviews">
+      <div className="review">
+        <h4>Chidi A.</h4>
+        <p>The richness of flavor in every dish left me speechless. It was like a love letter to my taste buds.</p>
+      </div>
+      <div className="review">
+        <h4>Amina K.</h4>
+        <p>The atmosphere, service, and food were world-class. Chef Amara’s attention to detail truly stands out.</p>
+      </div>
+      <div className="review">
+        <h4>David O.</h4>
+        <p>I’ve dined in top restaurants across cities—but this experience was unforgettable. A culinary revelation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     </section>
-  );
-}
+    
+
+  )
+  }
