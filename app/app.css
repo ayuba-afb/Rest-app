@@ -629,21 +629,22 @@ a {
   }
 }
 .cart-order {
-  margin-top: 12px; /* mt-3 = 0.75rem = 12px */
-  background-color: #3b82f6; /* Tailwind blue-500 */
+  margin-top: 12px; 
+  background-color: #3b82f6; 
   color: white;
-  padding: 4px 8px; /* px-2 py-1 = 0.5rem 1rem = 4px 8px */
+  padding: 4px 25px; 
   border-radius: 6px;
   transition: background-color 0.3s ease;
   border: none;
   cursor: pointer;
+
 }
 
 .cart-order:hover {
-  background-color: #1d4ed8; /* Tailwind blue-700 */
+  background-color: #1d4ed8; 
 }
 
-/* ✅ Media Query for smaller screens */
+
 @media (max-width: 640px) {
   .cart-order {
     font-size: 14px;
@@ -897,7 +898,6 @@ a {
 .social-icons svg:hover {
   color: #fff;
 }
-
 
 
 

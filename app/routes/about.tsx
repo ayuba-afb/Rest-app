@@ -10,6 +10,7 @@ import cheff from "../welcome/image/cheff.png"
 import moment1 from "../welcome/image/moment 1.jpg"
 import moment2 from "../welcome/image/moment 2.jpg"
 import moment3 from "../welcome/image/moment 3.jpg"
+import chef2 from "../welcome/image/chef2.jpg"
 const AboutUs = () => {
   return (
     <div className="bg-white text-gray-800">
@@ -42,7 +43,7 @@ const AboutUs = () => {
       {/* Chef Section */}
       <section className="bg-gray-100 py-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
-          <img src={cheff} alt="Chef" className="rounded-2xl shadow-lg w-full h-auto" />
+          <img src={chef2} alt="Chef" className="rounded-2xl shadow-lg w-full h-auto" />
           <div>
             <h2 className="text-3xl font-bold mb-4">Meet Chef Isabella</h2>
             <p className="text-lg mb-4">
@@ -57,7 +58,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Signature Dishes */}
       <section className="py-16 max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center mb-10">Signature Dishes</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -72,7 +72,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Gallery */}
+    
       <section className="bg-gray-50 py-16 px-4">
         <h2 className="text-3xl font-semibold text-center mb-10">Moments Captured</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">

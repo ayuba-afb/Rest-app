@@ -5,6 +5,7 @@ import shop from "../welcome/image/Shopimage.jpg"; // Adjust the path as needed
 import dine from "../welcome/dining.jpg"
 import chef from "../welcome/image/cheff.png"
 import React, { useState } from "react";
+import chef2 from "../welcome/image/chef2.jpg"
 // Types
 type ReservationFormFields = "name" | "email" | "phone" | "dateTime" | "guests";
 
@@ -72,7 +73,7 @@ export default function ReservationPage() {
     
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* === Hero Section === */}
+     
      <div className="relative w-full h-[400px] md:h-[500px]">
         <img
           src={dine}
@@ -167,35 +168,30 @@ export default function ReservationPage() {
        <div className="bg-black">
     
  <div className="bg-black">
-  
-      {/* <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-        <h1 className="text-xl md:text-2xl font-bold text-gray-800">
-          🧑‍🍳 Chef's Notes
-        </h1>
-      </header> */}
+
 
     
-      <div className="md:flex md:items-stretch max-h-[650px] overflow-hidden">
+      <div className="md:flex justify-center   max-h-[650px] overflow-hidden">
        
-        <div className="md:w-1/2 w-full max-h-[650px]">
+        <div className="md:w-1/2 w-full max-h-[650px] transform translate-x-96">
           <img
-            src={chef}
+            src={chef2}
             alt="Chef"
-            className="w-full h-full object-cover"
+            className="w-96 h-full object-cover"
           />
         </div>
 
-        {/* Notes Section */}
+     
         <motion.div
-          className="md:w-1/2 w-full p-6 md:p-10 text-gray-800 overflow-y-auto"
+          className="md:w-1/2 w-full p-2 md:p-4 text-gray-800 "
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           style={{ maxHeight: '650px' }}
         >
-          <div>
-            {/* <h2 className="text-2xl font-bold mb-4">📝 Notes</h2> */}
-            <p className="mb-4 text-base text-white ">
+          <div className="pt-9">
+          
+            <p className="mb-4  text-base text-white ">
               Explore these curated notes and insights from our master chef. Scroll through for tips, recipes, and more culinary inspiration.
             </p>
 

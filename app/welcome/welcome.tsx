@@ -34,7 +34,7 @@ import Pap from "../welcome/image/Pap and Akara.jpg";
 import spaghetti from "../welcome/image/Spaghetti.jpg";
 import jollof from "../welcome/image/Jollof.jpg";
 import backg from "../welcome/image/backg.jpg";
-import product from "../routes/Product";
+
 import { useNavigate } from 'react-router-dom';
 import fried from "../welcome/image/friedchicken.png"
 import os1 from "../welcome/image/os1.jpg";
@@ -57,7 +57,7 @@ export function Welcome() {
 
 
   
-// FoodGrid.jsx
+
 const foodItems = [
   {
     id: 1,
@@ -251,7 +251,7 @@ const foodItems = [
 
 
 <div className="flex flex-col lg:flex-row w-full justify-center items-start">
-      {/* Main Nav */}
+
       <nav
         style={{
           width: "60%",
@@ -289,7 +289,6 @@ const foodItems = [
           </div>
         </div>
 
-        {/* Repeatable Sections */}
         <div className="p-6">
           <h2 className="text-2xl font-bold mb-4 text-black">Appetizers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -301,7 +300,7 @@ const foodItems = [
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-24 sm:h-28 md:h-32 lg:h-36 object-cover rounded-lg mb-3"
+                  className="w-full h-40 sm:h-28 md:h-32 lg:h-36 object-cover rounded-lg mb-3"
                 />
                 <h3 className="text-sm font-semibold">{item.name}</h3>
                 <p className="text-sm text-gray-600">{item.description}</p>
@@ -339,7 +338,6 @@ const foodItems = [
         </div>
       </nav>
 
-      {/* Sidebar */}
       <aside className="hidden lg:block w-[20%] ml-4 border border-gray-300 rounded-xl p-4 bg-gray-50">
         <h3 className="text-lg font-bold mb-3 text-gray-700">POPULAR PICKS</h3>
         <h5 className="text-black mb-3 text-sm">

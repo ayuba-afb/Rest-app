@@ -151,7 +151,7 @@ export default function Shop() {
 </div>
 
 
-      {/* Search & Filters */}
+      
       <main className="p-5 md:p-10 bg-white w-full">
         <div className="w-full mb-4">
           <input
@@ -207,7 +207,7 @@ export default function Shop() {
         </div>
       
 
-      {/* Product Grid */}
+     
       <div className="flex justify-center items-center p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl w-full">
         {products.map((product) => (

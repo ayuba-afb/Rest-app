@@ -14,8 +14,7 @@ import dine from "../welcome/dining.jpg";
 export default function ContactUs() {
   return (
     <div className="bg-gray-50 text-gray-800 min-h-screen">
-      {/* Hero Section */}
-   {/* Hero Section */}
+  
 <div className="relative w-full h-[400px] md:h-[500px]">
   <img
     src={dine}
@@ -42,9 +41,9 @@ export default function ContactUs() {
 </div>
 
 
-      {/* Main Grid */}
+      
       <div className="grid md:grid-cols-2 gap-10 px-6 md:px-12 py-12">
-        {/* Contact Form */}
+  
         <motion.div
           initial={{ x: -30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -85,14 +84,14 @@ export default function ContactUs() {
           </form>
         </motion.div>
 
-        {/* Map + Info */}
+
         <motion.div
           initial={{ x: 30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="space-y-6"
         >
-          {/* Google Map */}
+      
           <div className="aspect-video rounded-lg overflow-hidden shadow-md">
             <iframe
               className="w-full h-full"
@@ -102,9 +101,9 @@ export default function ContactUs() {
             ></iframe>
           </div>
 
-          {/* Info + Hours */}
+       
           <div className="grid md:grid-cols-2 gap-6 text-sm md:text-base">
-            {/* Contact Info */}
+          
             <div className="space-y-2 text-gray-700">
               <p className="flex items-center gap-2">
                 <FaMapMarkerAlt className="text-black" /> 123 Food Street, Lagos, Nigeria
@@ -122,7 +121,6 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Opening Hours */}
             <div>
               <h4 className="text-lg font-semibold mb-2 text-black">Opening Hours</h4>
               <ul className="text-gray-700">
@@ -135,7 +133,6 @@ export default function ContactUs() {
         </motion.div>
       </div>
 
-      {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/2349001234567"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-600 transition"
@@ -145,7 +142,6 @@ export default function ContactUs() {
         <FaWhatsapp className="text-2xl" />
       </a>
 
-      {/* Media Query for iframe height */}
       <style>
         {`
           @media (max-width: 768px) {

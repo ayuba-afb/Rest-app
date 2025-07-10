@@ -506,8 +506,8 @@ export  function Layout({ children }: { children: React.ReactNode }) {
      
 
       
-      <footer className="bg-black px-6 py-12 text-sm lg:text-base text-gray-400">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <footer className="bg-black px-6 py-12 text-sm lg:text-base text-gray-400 ">
+        <div className="max-w-full mx-auto space-y-12 mt-4">
           
           <motion.div
             className="grid grid-cols-1 md:grid-cols-5 gap-6 border-b border-gray-700 pb-10"
@@ -607,7 +607,7 @@ export  function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
 
-            {/* Newsletter Signup */}
+      
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -633,7 +633,7 @@ export  function Layout({ children }: { children: React.ReactNode }) {
             </motion.div>
           </motion.div>
 
-          {/* Bottom Section */}
+
           <motion.div
             className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm border-t border-gray-700 pt-6"
             initial={{ opacity: 0, y: 20 }}
