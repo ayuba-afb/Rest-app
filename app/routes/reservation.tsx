@@ -6,6 +6,7 @@ import dine from "../welcome/dining.jpg"
 import chef from "../welcome/image/cheff.png"
 import React, { useState } from "react";
 import chef2 from "../welcome/image/chef2.jpg"
+
 // Types
 type ReservationFormFields = "name" | "email" | "phone" | "dateTime" | "guests";
 
@@ -55,7 +56,7 @@ export default function ReservationPage() {
       setErrors(formErrors);
       return;
     }
-
+    localStorage.setItem("reservationData", JSON.stringify(formData));
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -69,7 +70,7 @@ export default function ReservationPage() {
       });
     }, 2000);
   };
-
+  
     
   return (
     <div className="min-h-screen bg-gray-100">
@@ -115,7 +116,7 @@ export default function ReservationPage() {
             </div>
           ) : (
             <>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 ">
                 {[
                   { label: "Full Name", name: "name", type: "text" },
                   { label: "Email", name: "email", type: "email" },
