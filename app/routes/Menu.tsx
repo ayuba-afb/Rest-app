@@ -29,7 +29,7 @@ export default function Shop() {
     setSelectedSort(option);
     setSortOpen(false);
   };
-
+ 
   const products = [
     {
       id: 1,
@@ -116,6 +116,15 @@ export default function Shop() {
       rating: 5,
     },
   ];
+//   const filteredProducts = products.filter((product) =>
+//   product.name.toLowerCase().includes(searchTerm.toLowerCase())
+// );
+const filteredProducts = searchTerm.trim() === ""
+  ? products
+  : products.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase().trim())
+    );
+
   const navigate = useNavigate();
   const cartorder:(e:React.MouseEvent<HTMLButtonElement>)=>void=(e)=>{
     e.preventDefault()
@@ -207,8 +216,47 @@ export default function Shop() {
         </div>
       
 
-     
-      <div className="flex justify-center items-center p-6">
+     <div className="flex justify-center items-center p-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl w-full">
+                  {filteredProducts.map((product) => (
+  <div
+  key={product.id}
+  className="bg-white rounded-xl shadow-md overflow-hidden hover:bg-blue-100 transition duration-300"
+>
+  <img
+    src={product.image}
+    alt={product.name}
+    className="w-full h-48 object-cover"
+  />
+  <div className="p-4 text-center">
+    <h3 className="text-lg font-semibold mb- text-black">{product.name}</h3>
+    <p className="text-orange-500 font-bold mb-2">${product.price}</p>
+
+    <div className="flex justify-center items-center mb-2">
+      {Array.from({ length: 5 }, (_, index) => (
+        <FaStar
+          key={index}
+          className={`text-yellow-400 ${
+            index < product.rating ? "opacity-100" : "opacity-30"
+          }`}
+        />
+      ))}
+    </div>
+
+    <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition" onClick={cartorder}>
+      Add to Cart
+    </button>
+  </div>
+</div>
+
+
+))}
+{filteredProducts.length === 0 && (
+  <p className="text-center text-gray-500 col-span-full">No products found.</p>
+)}
+                  </div>
+     </div>
+      {/* <div className="flex justify-center items-center p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl w-full">
         {products.map((product) => (
           <div
@@ -242,7 +290,7 @@ export default function Shop() {
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
     </main>
     </section>
   );
