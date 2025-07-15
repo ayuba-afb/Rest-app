@@ -5,6 +5,7 @@ import Plaintain from "../welcome/image/Plantain.jpg";
 import Pap from "../welcome/image/Pap and Akara.jpg";
 import spaghetti from "../welcome/image/Spaghetti.jpg";
 import jollof from "../welcome/image/Jollof.jpg";
+import egusi from "../welcome/image/Egusi.jpg"
 type CartItem = {
   id: number;
   name: string;
@@ -17,37 +18,37 @@ export default function CartPage() {
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
       id: 1,
-      name: "Spaghetti Bolognese",
-      image: "https://source.unsplash.com/100x100/?spaghetti",
+      name: "Jollof",
+      image: jollof,
       price: 2000,
       quantity: 1,
     },
     {
       id: 2,
-      name: "Chicken Shawarma",
+      name: "spaghetti",
       image:spaghetti,
       price: 1500,
       quantity: 2,
     },
     {
-      id: 2,
-      name: "Chicken Shawarma",
-      image: "https://source.unsplash.com/100x100/?shawarma",
-      price: 1500,
+      id: 3,
+      name: "plantain",
+      image: Plaintain,
+      price: 2500,
       quantity: 2,
     },
     {
-      id: 2,
-      name: "Chicken Shawarma",
-      image: "https://source.unsplash.com/100x100/?shawarma",
-      price: 1500,
+      id: 5,
+      name: "Pap and Akara",
+      image: Pap,
+      price: 3500,
       quantity: 2,
     },
     {
-      id: 2,
-      name: "Chicken Shawarma",
-      image: "https://source.unsplash.com/100x100/?shawarma",
-      price: 1500,
+      id: 4,
+      name: "Egusi",
+      image: egusi,
+      price: 5500,
       quantity: 2,
     },
   ]);
@@ -80,7 +81,7 @@ export default function CartPage() {
   );
 
   return (
-    <div className="max-w-4xl mx-auto p-4 sm:p-6">
+     <div className="max-w-4xl mx-auto p-4 sm:p-6">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
         Your Cart
       </h2>
@@ -144,7 +145,6 @@ export default function CartPage() {
             </AnimatePresence>
           </div>
 
-          {/* Summary Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -156,16 +156,16 @@ export default function CartPage() {
             </h3>
             <div className="flex justify-between items-center mb-2">
               <span className="text-gray-700">Subtotal:</span>
-              <span className="font-bold">₦{total}</span>
+              <span className="font-bold text-black">₦{total}</span>
             </div>
             <div className="flex justify-between items-center mb-2">
               <span className="text-gray-700">Delivery Fee:</span>
-              <span className="font-bold">₦500</span>
+              <span className="font-bold text-black">₦500</span>
             </div>
             <hr className="my-2" />
-            <div className="flex justify-between items-center text-lg">
+            <div className="flex justify-between items-center text-lg text-black">
               <span>Total:</span>
-              <span className="font-bold">₦{total + 500}</span>
+              <span className="font-bold text-black">₦{total + 500}</span>
             </div>
             <button
               className="mt-6 w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded font-semibold transition"
