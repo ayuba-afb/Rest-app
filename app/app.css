@@ -13,6 +13,12 @@ body {
     color-scheme: dark;
   }
 }
+@media (max-width: 640px) {
+  .topbar-text {
+    display: none;
+  }
+}
+
 .top-nav-wrapper {
   width: 100%;
   background-color: #f4f4f4;

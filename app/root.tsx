@@ -70,138 +70,91 @@ export function Layout() {
         <Links />
       </head>
       <body>
-        {/* ✅ Top Info Bar */}
-        <div className="bg-gray-100 border-b border-gray-300">
-          <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2 text-sm">
-            <div className="flex items-center gap-4">
-              <FaTruck className="text-gray-600" />
-              <span>100% Secure delivery without contact</span>
-              <span className="mx-2">|</span>
-              <span>Track your order</span>
-              <span className="mx-2">|</span>
-              <IoIosSearch className="text-gray-600" /> Search
+ <div className="bg-gray-100 border-b border-gray-300">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2 text-sm">
+          {/* Left Section */}
+          <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
+            <FaTruck className="text-gray-600" />
+            <span className="hidden sm:inline">100% Secure delivery without contact</span>
+            <span className="hidden md:inline mx-2">|</span>
+            <span className="hidden md:inline">Track your order</span>
+            <span className="hidden md:inline mx-2">|</span>
+            <IoIosSearch className="text-gray-600" />
+            <span className="hidden md:inline">Search</span>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-3 text-gray-600 text-lg">
+            <PiFacebookLogoLight className="hover:text-blue-600 cursor-pointer" />
+            <CiTwitter className="hover:text-blue-400 cursor-pointer" />
+            <SiVeed className="hover:text-purple-500 cursor-pointer" />
+            <FaPinterestP className="hover:text-red-500 cursor-pointer" />
+          </div>
+        </div>
+      </div>
+
+      
+      <nav className="bg-white shadow-md relative z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+           
+            <div>
+              <img src={logo1} alt="Logo" className="h-10 w-auto" />
             </div>
-            <div className="flex items-center gap-3">
-              <PiFacebookLogoLight />
-              <CiTwitter />
-              <SiVeed />
-              <FaPinterestP />
+
+      
+            <div className="hidden md:flex space-x-6">
+              <Link to="/" className="hover:text-blue-600 flex items-center gap-1">
+                HOME <RiArrowDropDownLine />
+              </Link>
+              <Link to="/menu" className="hover:text-blue-600 flex items-center gap-1">
+                MENU <RiArrowDropDownLine />
+              </Link>
+              <Link to="/reservation" className="hover:text-blue-600">RESERVATION</Link>
+              <Link to="/about" className="hover:text-blue-600">ABOUT</Link>
+              <Link to="/contact" className="hover:text-blue-600">CONTACT</Link>
+              <Link to="/cart" className="hover:text-blue-600">CART</Link>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <CiShoppingCart className="text-xl cursor-pointer" />
+              <button
+                className="hidden md:inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              >
+                CONTACT US
+              </button>
+
+      
+              <button
+                onClick={toggleMenu}
+                className="md:hidden text-2xl focus:outline-none"
+              >
+                <PiListDashesLight />
+              </button>
             </div>
           </div>
         </div>
 
-  
-        <nav className="bg-white shadow-md relative z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              {/* Logo */}
-              <div>
-                <img src={logo1} alt="Logo" className="h-10 w-auto" />
-              </div>
-
-              <div className="hidden md:flex space-x-6">
-                <div className="relative group">
-                  <Link
-                    to="/"
-                    className="flex items-center gap-1 hover:text-blue-600"
-                  >
-                    HOME <RiArrowDropDownLine />
-                  </Link>
-                </div>
-
-                <div className="relative group">
-                  <Link
-                    to="/menu"
-                    className="flex items-center gap-1 hover:text-blue-600"
-                  >
-                    MENU <RiArrowDropDownLine />
-                  </Link>
-                </div>
-
-                <Link to="/reservation" className="hover:text-blue-600">
-                  RESERVATION
-                </Link>
-                <Link to="/about" className="hover:text-blue-600">
-                  ABOUT
-                </Link>
-                <Link to="/contact" className="hover:text-blue-600">
-                  CONTACT
-                </Link>
-                <Link to="/cart" className="hover:text-blue-600">
-                  CART
-                </Link>
-              </div>
-
-           
-              <div className="flex items-center gap-4">
-                <CiShoppingCart className="text-xl cursor-pointer" />
-                <button
-                  onClick={contactorder}
-                  className="hidden md:inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                >
-                  CONTACT US
-                </button>
-            
-                <button
-                  onClick={toggleMenu}
-                  className="md:hidden text-2xl focus:outline-none"
-                >
-                  <PiListDashesLight />
-                </button>
-              </div>
+     
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200">
+            <div className="flex flex-col space-y-3 px-4 py-3">
+              <Link to="/" onClick={toggleMenu}>HOME</Link>
+              <Link to="/menu" onClick={toggleMenu}>MENU</Link>
+              <Link to="/reservation" onClick={toggleMenu}>RESERVATION</Link>
+              <Link to="/about" onClick={toggleMenu}>ABOUT</Link>
+              <Link to="/contact" onClick={toggleMenu}>CONTACT</Link>
+              <Link to="/cart" onClick={toggleMenu}>CART</Link>
+              <Link to="/checkout" onClick={toggleMenu}>CHECKOUT</Link>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                CONTACT US
+              </button>
             </div>
           </div>
+        )}
+      </nav>
 
-          {/* ✅ Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden bg-white border-t border-gray-200">
-              <div className="flex flex-col space-y-3 px-4 py-3">
-                <button
-                  onClick={() => toggleDropdown("home")}
-                  className="flex justify-between items-center w-full"
-                >
-                  HOME <RiArrowDropDownLine />
-                </button>
-                {openDropdown === "home" && (
-                  <ul className="ml-4 mt-2 space-y-2">
-                    <li>Option 1</li>
-                    <li>Option 2</li>
-                  </ul>
-                )}
 
-                <button
-                  onClick={() => toggleDropdown("menu")}
-                  className="flex justify-between items-center w-full"
-                >
-                  MENU <RiArrowDropDownLine />
-                </button>
-                {openDropdown === "menu" && (
-                  <ul className="ml-4 mt-2 space-y-2">
-                    <li>Menu Grid</li>
-                    <li>Menu List</li>
-                  </ul>
-                )}
-
-                <Link to="/reservation" onClick={toggleMenu}>
-                  RESERVATION
-                </Link>
-                <Link to="/about" onClick={toggleMenu}>
-                  ABOUT
-                </Link>
-                <Link to="/contact" onClick={toggleMenu}>
-                  CONTACT
-                </Link>
-                <Link to="/cart" onClick={toggleMenu}>
-                  CART
-                </Link>
-                <Link to="/checkout">checkout</Link>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                  CONTACT US
-                </button>
-              </div>
-            </div>
-          )}
-        </nav>
 
    
         <Outlet />
