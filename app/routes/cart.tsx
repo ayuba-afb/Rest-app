@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 
@@ -14,7 +14,7 @@ export interface CartItem {
   id: number;
   name: string;
   image: string;
-  price: number; 
+  price: number;
   quantity: number;
 }
 
@@ -42,7 +42,8 @@ interface CartPageProps {
   disablePersistence?: boolean;
 }
 
-const VAT_RATE = 0.075; 
+
+const VAT_RATE = 0.075;
 
 const DELIVERY_FEES: Record<DeliveryMethod, number> = {
   pickup: 0,
@@ -69,7 +70,6 @@ const COUPONS: CouponDef[] = [
 
 const LS_CART = "localCart_v1";
 const LS_SETTINGS = "localCartSettings_v1";
-
 
 const formatNaira = (n: number): string =>
   new Intl.NumberFormat("en-NG", {
@@ -160,7 +160,6 @@ const writeSettingsToLS = (s: StoredSettings): void => {
 const findCoupon = (code: string): CouponDef | undefined =>
   COUPONS.find((c) => c.code.toLowerCase() === code.trim().toLowerCase());
 
-
 function preloadItems(): CartItem[] {
   return [
     { id: 1, name: "Jollof", image: Jollof, price: 2000, quantity: 1 },
@@ -171,21 +170,20 @@ function preloadItems(): CartItem[] {
   ];
 }
 
-
 export default function CartPage({
   onCheckout,
   disablePersistence = false,
 }: CartPageProps) {
   const navigate = useNavigate();
 
-  // Items
+
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     if (disablePersistence) return preloadItems();
     const ls = readCartFromLS();
     return ls.length ? ls : preloadItems();
   });
 
-  // Settings
+ 
   const [deliveryMethod, setDeliveryMethod] = useState<DeliveryMethod>(() => {
     if (disablePersistence) return "standard";
     const s = readSettingsFromLS();
@@ -211,7 +209,7 @@ export default function CartPage({
     appliedCoupon ? "ok" : ""
   );
 
-  // Persistence
+
   useEffect(() => {
     if (disablePersistence) return;
     writeCartToLS(cartItems);
@@ -226,7 +224,7 @@ export default function CartPage({
     });
   }, [deliveryMethod, showVAT, appliedCoupon, disablePersistence]);
 
-  // -------------------- Cart actions --------------------
+ 
   const handleRemove = (id: number): void => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
@@ -242,7 +240,6 @@ export default function CartPage({
     );
   };
 
-
   const handleQuantityInput = (id: number, value: string): void => {
     const num = Math.max(1, Number(value) || 1);
     setCartItems((prev) =>
@@ -255,7 +252,6 @@ export default function CartPage({
       setCartItems([]);
     }
   };
-
 
   const applyCoupon = (): void => {
     const found = findCoupon(couponInput);
@@ -311,6 +307,7 @@ export default function CartPage({
       },
     });
   };
+
   return (
     <div className="max-w-4xl mx-auto p-4 sm:p-6">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
@@ -339,7 +336,7 @@ export default function CartPage({
             </button>
           </div>
 
-   
+      
           <div className="space-y-4">
             <AnimatePresence>
               {cartItems.map((item) => (
@@ -410,6 +407,7 @@ export default function CartPage({
             </AnimatePresence>
           </div>
 
+       
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -448,7 +446,6 @@ export default function CartPage({
               </div>
             </div>
 
-        
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-700">
                 Promo Code:
@@ -489,7 +486,7 @@ export default function CartPage({
               )}
             </div>
 
-     
+      
             <div className="flex items-center gap-2 text-sm text-black">
               <input
                 id="vat-toggle"
@@ -504,7 +501,6 @@ export default function CartPage({
 
             <hr className="my-2 text-black" />
 
-     
             <div className="space-y-2 text-sm text-black">
               <div className="flex justify-between">
                 <span>Subtotal:</span>

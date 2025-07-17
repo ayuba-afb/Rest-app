@@ -116,7 +116,7 @@ export function Layout() {
             </div>
 
             <div className="flex items-center gap-4">
-              <CiShoppingCart className="text-xl cursor-pointer" />
+              <CiShoppingCart className="text-xl cursor-pointer text-black" />
               <button
                 className="hidden md:inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
               >
