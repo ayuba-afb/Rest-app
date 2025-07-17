@@ -11,7 +11,7 @@ interface CheckoutItem {
   quantity: number;
 }
 
-/
+
 interface CheckoutState {
   items: CheckoutItem[];
   total: number;           
