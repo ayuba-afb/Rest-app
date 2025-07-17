@@ -368,7 +368,7 @@ export default function CartPage({
                   <div className="flex items-center space-x-2 mt-4 sm:mt-0">
                     <button
                       onClick={() => handleQuantity(item.id, "dec")}
-                      className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+                      className="p-2 bg-white rounded hover:bg-gray-300"
                       aria-label="Decrease quantity"
                     >
                       <FaMinus />
@@ -383,18 +383,18 @@ export default function CartPage({
                           (e.target as HTMLInputElement).value
                         )
                       }
-                      className="w-14 text-center border border-gray-300 rounded py-1 text-sm"
+                      className="w-14 text-center border border-gray-300 rounded py-1 text-sm text-black"
                     />
                     <button
                       onClick={() => handleQuantity(item.id, "inc")}
-                      className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+                      className="p-2 bg-white rounded hover:bg-gray-300"
                       aria-label="Increase quantity"
                     >
                       <FaPlus />
                     </button>
                   </div>
 
-                  <div className="text-right mt-4 sm:mt-0">
+                  <div className="text-right mt-4 sm:mt-0 text-black">
                     <p className="font-bold">
                       {formatNaira(item.price * item.quantity)}
                     </p>
@@ -429,7 +429,7 @@ export default function CartPage({
                   (opt) => (
                     <label
                       key={opt}
-                      className="inline-flex items-center gap-2 cursor-pointer text-sm"
+                      className="inline-flex items-center gap-2 cursor-pointer text-sm text-black"
                     >
                       <input
                         type="radio"
@@ -462,7 +462,7 @@ export default function CartPage({
                     setCouponStatus("");
                   }}
                   placeholder="Enter coupon"
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm text-black"
                 />
                 <button
                   onClick={applyCoupon}
@@ -490,7 +490,7 @@ export default function CartPage({
             </div>
 
      
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-sm text-black">
               <input
                 id="vat-toggle"
                 type="checkbox"
@@ -502,10 +502,10 @@ export default function CartPage({
               <label htmlFor="vat-toggle">Include VAT (7.5%)</label>
             </div>
 
-            <hr className="my-2" />
+            <hr className="my-2 text-black" />
 
      
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm text-black">
               <div className="flex justify-between">
                 <span>Subtotal:</span>
                 <span>{formatNaira(subtotal)}</span>
@@ -531,7 +531,7 @@ export default function CartPage({
               )}
             </div>
 
-            <hr className="my-2" />
+            <hr className="my-2 text-black" />
 
             <div className="flex justify-between items-center text-lg text-black font-bold">
               <span>Total:</span>

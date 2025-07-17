@@ -72,18 +72,17 @@ export function Layout() {
       <body>
  <div className="bg-gray-100 border-b border-gray-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2 text-sm">
-          {/* Left Section */}
+      
           <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
             <FaTruck className="text-gray-600" />
-            <span className="hidden sm:inline">100% Secure delivery without contact</span>
-            <span className="hidden md:inline mx-2">|</span>
-            <span className="hidden md:inline">Track your order</span>
-            <span className="hidden md:inline mx-2">|</span>
-            <IoIosSearch className="text-gray-600" />
-            <span className="hidden md:inline">Search</span>
+            <span className="hidden sm:inline text-black">100% Secure delivery without contact</span>
+            <span className="hidden md:inline mx-2 text-black">|</span>
+            <span className="hidden md:inline text-black">Track your order</span>
+            <span className="hidden md:inline mx-2 text-black">|</span>
+            <IoIosSearch className="text-gray-600 " />
+            <span className="hidden md:inline text-black">Search</span>
           </div>
 
-          {/* Social Icons */}
           <div className="flex items-center gap-3 text-gray-600 text-lg">
             <PiFacebookLogoLight className="hover:text-blue-600 cursor-pointer" />
             <CiTwitter className="hover:text-blue-400 cursor-pointer" />
@@ -127,7 +126,7 @@ export function Layout() {
       
               <button
                 onClick={toggleMenu}
-                className="md:hidden text-2xl focus:outline-none"
+                className="md:hidden text-2xl focus:outline-none text-black"
               >
                 <PiListDashesLight />
               </button>
