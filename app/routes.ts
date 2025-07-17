@@ -6,5 +6,6 @@ export default [index("routes/home.tsx"),
     route("cart", "routes/cart.tsx"),
    route("reservation", "routes/reservation.tsx"),
    route("contact", "routes/contact.tsx"),
-   route("about","routes/about.tsx")
+   route("about","routes/about.tsx"),
+   route("checkout","routes/checkout.tsx"),
 ] satisfies RouteConfig;

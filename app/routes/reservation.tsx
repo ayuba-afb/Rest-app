@@ -1,13 +1,13 @@
 
 import { motion } from "framer-motion";
 import { RiArrowDropRightLine } from "react-icons/ri";
-import shop from "../welcome/image/Shopimage.jpg"; // Adjust the path as needed
+import shop from "../welcome/image/Shopimage.jpg";
 import dine from "../welcome/dining.jpg"
 import chef from "../welcome/image/cheff.png"
 import React, { useState } from "react";
 import chef2 from "../welcome/image/chef2.jpg"
 
-// Types
+
 type ReservationFormFields = "name" | "email" | "phone" | "dateTime" | "guests";
 
 type FormData = {
@@ -204,7 +204,7 @@ export default function ReservationPage() {
             </div>
           </div>
 
-          {/* CTA Button */}
+    
           <div className="mt-6">
             <button className="px-5 py-2 bg-black text-white rounded-xl hover:bg-gray-800 transition text-sm">
               Read More Tips

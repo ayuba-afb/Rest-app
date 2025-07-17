@@ -134,7 +134,7 @@ export default function ContactUs() {
       </div>
 
       <a
-        href="https://wa.me/2349001234567"
+        href="https://wa.me/2348025221224"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-600 transition"
         target="_blank"
         rel="noopener noreferrer"

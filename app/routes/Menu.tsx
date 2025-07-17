@@ -132,8 +132,7 @@ const filteredProducts = searchTerm.trim() === ""
   }
   return (
     <section style={{ width: "100%", height: "100%" }}>
-      {/* Banner */}
-    {/* Hero Section - Menu Page */}
+    
 <div className="relative w-full h-[400px] md:h-[500px]">
   <img
     src={dine}
