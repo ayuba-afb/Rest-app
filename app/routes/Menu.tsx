@@ -242,7 +242,7 @@ const filteredProducts = searchTerm.trim() === ""
       ))}
     </div>
 
-    <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition" onClick={cartorder}>
+    <button className="mt-2 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-blue-600 transition" onClick={cartorder}>
       Add to Cart
     </button>
   </div>

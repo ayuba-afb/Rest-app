@@ -122,7 +122,7 @@ const foodItems = [
     </main>
 
 
-<nav style={{color:"black", fontSize:"28px",textAlign:"center", fontWeight:"bolder", paddingTop:"50px",paddingBottom:"25px"}}>POPULAR FOODITEMS
+<nav style={{color:"black", fontSize:"28px",textAlign:"center", fontWeight:"bolder", paddingTop:"50px",paddingBottom:"25px"}}>POPULAR FOOD ITEMS
       <div className="swiper-container">
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
