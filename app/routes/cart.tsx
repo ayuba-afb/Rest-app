@@ -363,13 +363,14 @@ export default function CartPage({
                   </div>
 
                   <div className="flex items-center space-x-2 mt-4 sm:mt-0">
-                    <button
-                      onClick={() => handleQuantity(item.id, "dec")}
-                      className="p-2 bg-white rounded hover:bg-gray-300"
-                      aria-label="Decrease quantity"
-                    >
-                      <FaMinus />
-                    </button>
+                   <button
+  onClick={() => handleQuantity(item.id, "dec")}
+  className="p-2 bg-white text-black rounded hover:bg-gray-300"
+  aria-label="Decrease quantity"
+>
+  <FaMinus />
+</button>
+
                     <input
                       type="number"
                       min={1}
@@ -382,13 +383,14 @@ export default function CartPage({
                       }
                       className="w-14 text-center border border-gray-300 rounded py-1 text-sm text-black"
                     />
-                    <button
-                      onClick={() => handleQuantity(item.id, "inc")}
-                      className="p-2 bg-white rounded hover:bg-gray-300"
-                      aria-label="Increase quantity"
-                    >
-                      <FaPlus />
-                    </button>
+               <button
+  onClick={() => handleQuantity(item.id, "inc")}
+  className="p-2 bg-white text-black rounded hover:bg-gray-300"
+  aria-label="Increase quantity"
+>
+  <FaPlus />
+</button>
+
                   </div>
 
                   <div className="text-right mt-4 sm:mt-0 text-black">
