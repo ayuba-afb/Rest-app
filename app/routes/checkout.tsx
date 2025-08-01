@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-
 interface CheckoutItem {
   id: number;
   name: string;
@@ -11,10 +10,9 @@ interface CheckoutItem {
   quantity: number;
 }
 
-
 interface CheckoutState {
   items: CheckoutItem[];
-  total: number;           
+  total: number;
   deliveryMethod: string;
   vatIncluded: boolean;
   appliedCoupon: string | null;
@@ -32,7 +30,6 @@ const CheckoutPage: React.FC = () => {
   const location = useLocation();
   const state = location.state as CheckoutState | undefined;
 
- 
   if (!state || !state.items?.length) {
     return (
       <div className="max-w-md mx-auto p-6 text-center">
@@ -49,7 +46,6 @@ const CheckoutPage: React.FC = () => {
 
   const { items, total, deliveryMethod, vatIncluded, appliedCoupon } = state;
 
-
   const [placing, setPlacing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -59,12 +55,12 @@ const CheckoutPage: React.FC = () => {
     payment: "card",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((f) => ({ ...f, [name]: value }));
   };
-
- 
 
   const placeOrder = (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,17 +73,16 @@ const CheckoutPage: React.FC = () => {
     }, 2000);
   };
 
-  const lineSubtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const lineSubtotal = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="max-w-7xl mx-auto p-6 bg-black">
       <h2 className="text-3xl font-bold mb-6 text-center text-white">Checkout</h2>
 
-      <form
-        onSubmit={placeOrder}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-6"
-      >
- 
+      <form onSubmit={placeOrder} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -102,7 +97,7 @@ const CheckoutPage: React.FC = () => {
             placeholder="Full Name"
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500"
+            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500 text-black"
             required
           />
 
@@ -112,7 +107,7 @@ const CheckoutPage: React.FC = () => {
             placeholder="Email Address"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500"
+            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500 text-black"
             required
           />
 
@@ -122,7 +117,7 @@ const CheckoutPage: React.FC = () => {
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500"
+            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500 text-black"
             required
           />
 
@@ -131,13 +126,12 @@ const CheckoutPage: React.FC = () => {
             placeholder="Shipping Address"
             value={formData.address}
             onChange={handleInputChange}
-            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500"
+            className="w-full border rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-blue-500 text-black"
             rows={4}
             required
           />
         </motion.div>
 
-       
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -166,27 +160,23 @@ const CheckoutPage: React.FC = () => {
               </div>
             ))}
 
-        
             <div className="flex justify-between font-semibold pt-2">
               <span>Items Subtotal</span>
               <span>{formatNaira(lineSubtotal)}</span>
             </div>
           </div>
 
-        
           <div className="text-sm mb-4 space-y-1">
             <p>Delivery Method: {deliveryMethod}</p>
             {vatIncluded && <p>VAT Included.</p>}
             {appliedCoupon && <p>Coupon: {appliedCoupon}</p>}
           </div>
 
-      
           <div className="flex justify-between font-bold text-lg mb-6">
             <span>Total</span>
             <span>{formatNaira(total)}</span>
           </div>
 
-        
           <div className="mb-4">
             <h4 className="font-semibold mb-2">Payment Method</h4>
             <label className="flex items-center gap-2 mb-2">
